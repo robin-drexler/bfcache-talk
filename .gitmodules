@@ -1,0 +1,3 @@
+[submodule "cart/html5-device-mockups"]
+	path = cart/html5-device-mockups
+	url = git@github.com:pixelsign/html5-device-mockups.git
