@@ -21,8 +21,9 @@
 - no window load / domcontentloaded event fired
 
 ---
-# example use case
-[Infinite Kittens!](http://localhost:2222/kitten/)
+# demo time
+- [Infinite Kittens!](https://robin-drexler.github.io/bfcache-talk/kitten/)
+- [Cart pittfall example](https://robin-drexler.github.io/bfcache-talk/cart/)
 
 ---
 # take control
