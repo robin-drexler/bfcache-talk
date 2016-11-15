@@ -1,0 +1,108 @@
+<head>
+<link rel="stylesheet" type="text/css" href="html5-device-mockups/device-mockups/device-mockups2.min.css" />
+<style>
+* {
+  box-sizing: border-box;
+}
+body, html {
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
+}
+.content {
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.cart {
+  height: 10%;
+  background-color: #000;
+  opacity: 0.6;
+}
+.cart-icon {
+  width: 38%;
+  transition: width .2s ease;
+  float: left;
+  height: 100%;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+
+}
+.cart-cta {
+  background-color: green;
+  width: 62%;
+  height: 100%;
+  float: left;
+  padding: 15px;
+  text-align: center;
+}
+
+.cart.loading .cart-icon {
+  width: 100%;
+}
+
+.cart.loading .cart-cta {
+  display: none;
+}
+
+
+.cart.loading .loading-img {
+  display: inline;
+}
+.cart.loading .cart-img {
+  display: none;
+}
+
+.loading-img {
+  display: none;
+}
+.cart-img {
+  display: inline;
+}
+
+</style>
+
+</head>
+
+<body>
+  <div class="content">
+
+    <div style="width: 300px; margin: 0 auto;">
+      <div class="device-mockup" data-device="iphone6" data-orientation="portrait" data-color="black">
+          <div class="device">
+              <div class="screen">
+                <div style="background-color: #fff; height: 100%">
+                <img style="height: 90%" src="bg.jpg"/>
+                <div class="cart">
+                  <div class="cart-icon">
+                    <img class="cart-img" src="cart.png" style="width: 24px; height: 24px;"/>
+                    <img class="loading-img" src="loading.gif" style="width: 24px; height: 24px;"/>
+                  </div>
+                  <div class="cart-cta">Go to checkout</div>
+                </div>
+                </div>
+              </div>
+              <div class="button">
+                  <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+              </div>
+          </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+  document.querySelector('.cart-cta').addEventListener('click', function() {
+    document.querySelector('.cart').classList.add('loading');
+  });
+
+  document.querySelector('.cart').addEventListener('dblclick', function() {
+    window.location.href = 'checkout.html';
+  });
+  </script>
+</body>

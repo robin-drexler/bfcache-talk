@@ -1,0 +1,16 @@
+<script>
+function start() {
+  urls = [
+    'http://localhost:2222/kitten/',
+    'http://localhost:2222/cart/'
+  ];
+
+  urls.forEach(function(url) {
+    window.open(url, '_blank')
+  })
+
+}
+</script>
+
+
+<button onclick="start()">open</button>

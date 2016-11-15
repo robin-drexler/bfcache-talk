@@ -1,0 +1,78 @@
+<head>
+<style>
+  body, html {
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+
+  }
+  .content {
+    width: 960px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  img {
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+  }
+</style>
+
+<title>
+  Infinite Kittens
+</title>
+</head>
+
+
+<div class="content">
+  <h1>😻 Infinite Kittens 😻</h1>
+  <p>
+  Showcases <a href="https://developer.mozilla.org/en-US/docs/Working_with_BFCache">bfcache</a>. Scroll down until some new kittens have been loaded.</br>
+  Click on a kitten to navigate away from the page.</br>
+  Navigate back to the page (using the back button).</br>
+  In Safari and Firefox you should be were you left off.</br>
+  In Chrome (and other browsers), all additionally loaded kittens should be gone.
+  </p>
+</div>
+
+
+<script>
+var current = 400;
+var count = 0;
+
+function addKitten() {
+  var src = `https://placekitten.com/${current}/${current}`;
+  var contentNode = document.querySelector('.content');
+  var anchor = document.createElement('a');
+
+  var markup = `
+    <h2>😻 ${count}</h2>
+    <a href="${src}">
+      <img src="${src}" style="height: 400px"/>
+    </a>
+  `;
+
+  var div = document.createElement('div');
+  div.innerHTML = markup;
+  contentNode.insertBefore(div, null);
+  current += 5;
+  count += 1;
+}
+
+addKitten();
+addKitten();
+addKitten();
+
+window.addEventListener('scroll',function() {
+  var scrollTop = document.scrollingElement.scrollTop;
+  var bodyHeight = document.body.scrollHeight;
+  var containerHeight = document.scrollingElement.clientHeight
+  var distance = Math.abs(bodyHeight - scrollTop - containerHeight);
+  console.log(distance)
+  if (distance <= 500) {
+    addKitten();
+  }
+});
+
+
+</script>
